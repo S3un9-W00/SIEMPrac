@@ -1,0 +1,15 @@
+
+    h1 {text-align: center; margin: 30px 0; font-size: 30pt;}
+
+    table th, table td {
+        padding: 18px;
+        border: 1px solid #000;
+    }
+    
+    div {text-align: center;}
+
+    table { margin: 0 auto; border-collapse: collapse;}
+
+    h2 { text-align: center; }
+
+    .warn { color: #c62828; font-weight: bold; }

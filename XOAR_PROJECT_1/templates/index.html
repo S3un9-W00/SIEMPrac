@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <title>SIEM Dashboard</title>
+</head>
+<body>
+  <h1>로그 분석 결과</h1>
+
+  <table>
+    <thead>
+      <tr>
+        {% for c in columns %}<th>{{ c }}</th>{% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for r in rows %}
+      <tr>
+        <td>{{ r.id }}</td>
+        <td>{{ r.source }}</td>
+        <td>{{ r.message }}</td>
+        <td>{{ r.TimeStamp }}</td>
+        <td class="{{ 'warn' if '⚠️' in r.result else '' }}">{{ r.result }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <h2>시간대별 공격 탐지 그래프</h2>
+  <div><img src="/chart.png" alt="chart"></div>
+</body>
+</html>
